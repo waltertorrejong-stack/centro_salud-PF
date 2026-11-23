@@ -12,6 +12,10 @@ Route::get('/pobladores', function () {
     return view('pobladores.index');
 })->name('pobladores.index');
 
+Route::get('/pobladores/create', function () {
+    return view('pobladores.create');
+})->name('pobladores.create');
+
 
 Route::get('/nacimientos', function () {
     return view('nacimientos.index');

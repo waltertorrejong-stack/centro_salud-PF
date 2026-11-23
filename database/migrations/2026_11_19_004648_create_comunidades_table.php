@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('comunidades', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre');
+            $table->string('nombre', 120)->unique('uq_comunidades_nombre');
+            $table->string('distrito', 200)->nullable();
             $table->timestamps();
         });
     }

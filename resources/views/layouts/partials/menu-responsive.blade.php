@@ -26,3 +26,7 @@
     <i class="w-8 fas fa-gear"></i>
     Configuración
 </a>
+<a href="" class="flex items-center gap-3 bg-red-500 text-white px-4 py-3 rounded-lg transition duration-200">
+    <i class="fas fa-right-from-bracket"></i>
+    <span>Cerrar sesión</span>
+</a>

@@ -13,7 +13,13 @@ return new class extends Migration
     {
         Schema::create('familias', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('id_comunidad')->constrained('comunidades')->cascadeOnUpdate()->restrictOnDelete();
+            $table->string('numero_familia', 30)->nullable();
+            $table->string('apellidos', 150);
             $table->timestamps();
+
+            $table->unique(['id_comunidad', 'numero_familia'], 'uq_familia_comunidad_numero');
+
         });
     }
 

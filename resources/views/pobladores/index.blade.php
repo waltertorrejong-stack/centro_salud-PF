@@ -88,7 +88,7 @@
                     <!-- BOTON -->
                     <div class="flex justify-end mt-6">
 
-                        <a href="#"
+                        <a href="{{ route('pobladores.create') }}"
                            class="inline-flex items-center gap-3
                                   bg-blue-600 hover:bg-blue-700
                                   text-white px-7 py-4 rounded-xl
