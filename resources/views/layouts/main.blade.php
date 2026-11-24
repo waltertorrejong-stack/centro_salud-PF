@@ -53,24 +53,43 @@
         <!-- Contenido principal -->
         <div class="flex-1">
 
-            <!-- Encabezado -->
-            <div class="flex justify-end items-center bg-gray-200 p-4 relative" x-data="{mostrar_menu: false}">
+                        <!-- Encabezado -->
+            <div class="flex justify-between items-center bg-gray-200 p-4 relative"
+                x-data="{mostrar_menu: false}">
 
-                <div class="text-blue-900 font-bold text-2xl">
-                    <i class="fas fa-user"></i>
-                    @yield('user_name', 'Administrador')
+                <!-- Izquierda: Volver u otro contenido -->
+                <div>
+                    @yield('user_name')
                 </div>
 
-                <!-- Menú móvil -->
-                <div class="sm:hidden">
-                    <button type="button" x-on:click="mostrar_menu=!mostrar_menu"> 
-                        <i class="fas fa-bars text-2xl"></i>
-                    </button>
+                <!-- Derecha: Administrador -->
+                <div class="flex items-center gap-3">
+
+                    <div class="text-blue-900 font-bold text-2xl">
+                        <i class="fas fa-user"></i>
+                        Administrador
+                    </div>
+
+                    <!-- Menú móvil -->
+                    <div class="sm:hidden">
+                        <button type="button" x-on:click="mostrar_menu=!mostrar_menu">
+                            <i class="fas fa-bars text-2xl"></i>
+                        </button>
+                    </div>
+
                 </div>
-                <div x-show="mostrar_menu" x-on:click.away="mostrar_menu=false" class="border rounded-2xl absolute right-0 top-full flex flex-col bg-blue-900 text-white px-6" >
+
+                <!-- Menú responsive -->
+                <div x-show="mostrar_menu"
+                    x-on:click.away="mostrar_menu=false"
+                    class="border rounded-2xl absolute right-0 top-full
+                            flex flex-col bg-blue-900 text-white px-6">
+
                     @include('layouts.partials.menu-responsive')
                 </div>
+
             </div>
+
             <!-- Contenido de cada página -->
             <div class="flex flex-col p-4 bg-gray-100 min-h-screen">
                 @yield('contenido')

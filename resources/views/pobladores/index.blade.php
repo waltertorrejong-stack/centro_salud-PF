@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('user_name', 'Administrador')
+@section('user_name')
 @section('contenido')
 
 <div class="p-2 space-y-4">
@@ -35,7 +35,7 @@
             <i class="fas fa-calendar-days text-2xl text-blue-600"></i>
 
             <span class="text-sm font-semibold text-blue-900">
-                Fecha
+                {{ date('d-m-y') }}
             </span>
 
         </div>
